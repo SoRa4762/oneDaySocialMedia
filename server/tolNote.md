@@ -10,4 +10,4 @@ Access to XMLHttpRequest at 'http://localhost:8000/user' from origin 'http://loc
 ### this is not
 
 POST http://localhost/8000/user net::ERR_CONNECTION_REFUSED
-this means you a fool for not hitting your api properly or something else, but not CORS error, aight?
+this means you a fool for not hitting your api properly or something else, but not CORS error
