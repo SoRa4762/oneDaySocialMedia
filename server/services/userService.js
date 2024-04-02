@@ -2,8 +2,8 @@ const userModel = require("../models/userModel");
 
 const CreateUser = async (userData) => {
   const newUserModel = new userModel(userData);
-  const savedUser = await newUserModel.save();
-  return savedUser;
+  await newUserModel.save();
+  return "User registered successfully";
 };
 
 const GetUsers = async () => {

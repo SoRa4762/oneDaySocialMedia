@@ -6,7 +6,7 @@ const CreatePost = async (postContent) => {
   return savedPost;
 };
 
-const GetPost = async () => {
+const GetPosts = async () => {
   return await postModel.find();
 };
 
@@ -25,4 +25,4 @@ const UpdatePost = async (postId, newPostContent) => {
   });
 };
 
-module.exports = { CreatePost, GetPost, DeletePost, UpdatePost, GetPostById };
+module.exports = { CreatePost, GetPosts, DeletePost, UpdatePost, GetPostById };
