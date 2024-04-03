@@ -21,13 +21,13 @@ const Home = () => {
 
   return (
     <>
-      <div>
-        <Header />
+      <Header />
+      <div className="h-full w-full">
         {/* posts */}
-        <div className="h-full w-full">
+        <div className="h-full w-full flex flex-col justify-center items-center">
           {allPosts.map((post) => (
-            <div key={post._id} className="h-48 w-48">
-              <div className="h-18 w-full">
+            <div key={post._id} className="h-48 w-96 border rounded-2xl mt-2">
+              <div className="h-12 bg-blue-500 w-full">
                 <h3>{post.title}</h3>
               </div>
               <p>{post.content}</p>

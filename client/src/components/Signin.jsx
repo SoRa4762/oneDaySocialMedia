@@ -6,7 +6,7 @@ import Header from "../elements/Header";
 const Signin = () => {
   const navigate = useNavigate();
   const [signinData, setSigninData] = useState({});
-  const [resData, setResData] = useState();
+  const [resData, setResData] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;

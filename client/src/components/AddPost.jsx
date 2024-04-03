@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import Header from "../elements/Header";
+import { useNavigate } from "react-router-dom";
 
 const AddPost = () => {
   const [postData, setPostData] = useState({});
+  const navigate = useNavigate();
 
   const handlePostChange = (e) => {
     const { name, value } = e.target;
@@ -17,6 +19,7 @@ const AddPost = () => {
     axios.post("http://localhost:8000/post", postData).then(
       (res) => {
         console.log(res);
+        navigate("/home");
       },
       (error) => console.log(error)
     );
