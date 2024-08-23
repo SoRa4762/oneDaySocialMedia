@@ -1,4 +1,8 @@
+import { useAuth } from "../context/useAuth";
+
 const Header = () => {
+  const { logout } = useAuth();
+
   return (
     <div className="h-[10vh] w-full flex gap-2 items-center justify-between font-semibold text-xl px-4 bg-blue-500 text-white">
       <div className="flex gap-4">
@@ -17,6 +21,7 @@ const Header = () => {
         <a href="/signup" className="cursor-pointer">
           Signup
         </a>
+        <button onClick={logout}>Logout</button>
       </div>
     </div>
   );

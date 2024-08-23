@@ -2,9 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header from "../elements/Header";
+import { useAuth } from "../context/useAuth";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [signinData, setSigninData] = useState({});
   const [resData, setResData] = useState("");
 
@@ -20,7 +22,8 @@ const Signin = () => {
       (res) => {
         console.log(res);
         setResData(res.data);
-        navigate("/home");
+        login(res.data);
+        navigate("/home", { replace: true });
       },
       (error) => {
         console.log(error);
