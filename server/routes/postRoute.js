@@ -5,5 +5,7 @@ const router = express.Router();
 router.post("/", postController.CreatePost);
 router.get("/:id", postController.GetPost);
 router.get("/", postController.GetPosts);
+router.put("/:id", postController.UpdatePost);
+router.delete("/:id", postController.DeletePost);
 
 module.exports = router;

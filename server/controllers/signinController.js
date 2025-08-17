@@ -7,7 +7,7 @@ const SigninController = async (req, res) => {
     res.status(404).json("User not found!");
   } else {
     if (user.password === password) {
-      res.status(200).json("User successfully signed in!");
+      res.status(200).json({ user, message: "User Signed In Succesfully!" });
     } else {
       res.status(400).json("Incorrect password!");
     }

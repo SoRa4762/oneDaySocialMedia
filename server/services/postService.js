@@ -19,8 +19,7 @@ const DeletePost = async (postId) => {
 };
 
 const UpdatePost = async (postId, newPostContent) => {
-  return await (postModel.findByIdAndUpdate(postId, newPostContent),
-  {
+  return await postModel.findByIdAndUpdate(postId, newPostContent, {
     new: true,
   });
 };

@@ -27,4 +27,22 @@ const GetPost = async (req, res) => {
   }
 };
 
-module.exports = { GetPost, GetPosts, CreatePost };
+const UpdatePost = async (req, res) => {
+  try {
+    const updatePost = await postService.UpdatePost(req.params.id, req.body);
+    res.status(200).json(updatePost);
+  } catch (err) {
+    res.status(403).json(err);
+  }
+};
+
+const DeletePost = async (req, res) => {
+  try {
+    const deletePost = await postService.DeletePost(req.params.id);
+    res.status(404).json(deletePost);
+  } catch (err) {
+    res.status(403).json(err);
+  }
+};
+
+module.exports = { GetPost, GetPosts, CreatePost, UpdatePost, DeletePost };
